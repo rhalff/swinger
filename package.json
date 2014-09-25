@@ -32,9 +32,9 @@
     "semver": "^3.0.1",
     "serve-favicon": "^2.0.1",
     "toposort": "^0.2.10",
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
+    "confert": "^0.3.0"
   },
-
   "optionalDependencies": {
     "loopback-explorer": "^1.2.8"
   },

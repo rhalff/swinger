@@ -1,6 +1,12 @@
 var loopback = require('loopback');
-var boot = require('loopback-boot');
-var path = require('path');
+var boot     = require('loopback-boot');
+var path     = require('path');
+var file = [ './config',
+    process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
+    ].join('.');
+
+var config   = require('confert')(file);
+
 var app = module.exports = loopback();
 
 // Set up the /favicon.ico
@@ -11,17 +17,20 @@ app.use(loopback.compress());
 
 // -- Add your pre-processing middleware here --
 
-var ds = loopback.createDataSource({
-    connector: require('loopback-component-storage'),
-    provider: 'filesystem',
-    root: path.join(__dirname, '../', 'storage')
-});
-var container = ds.createModel('container');
-
-app.model(container);
-
 // boot scripts mount components like REST API
-boot(app, __dirname);
+boot(app, config);
+
+if(!app.get('storage')) {
+  throw Error('Storage not set');
+}
+
+// Setup storage, can actually put this in boot/ I guess
+var storage = app.get('storage');
+storage.connector = require('loopback-component-storage');
+
+var ds = loopback.createDataSource(storage);
+var container = ds.createModel('container');
+app.model(container);
 
 // -- Mount static files here--
 // All static middleware should be registered at the end, as all requests

@@ -1,8 +1,11 @@
 node_modules
 dist
 .tmp
+*.swp
 .sass-cache
 bower_components
 client/app/scripts/lb-services.js
 storage
 npm-debug.log
+/nbproject/private/
+/nbproject

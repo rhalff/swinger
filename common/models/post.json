@@ -7,13 +7,35 @@
       "type": "string",
       "required": true
     },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "handle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
     "content": {
+      "type": "string"
+    },
+    "contentType": {
+      "type": "string"
+    },
+    "tags": {
       "type": "string"
     },
     "image": {
       "type": "string"
     },
-    "created": {
+    "dateCreated": {
+      "type": "date"
+    },
+    "dateModified": {
+      "type": "date"
+    },
+    "datePublished": {
       "type": "date"
     }
   },

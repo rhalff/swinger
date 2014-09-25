@@ -19,6 +19,7 @@ angular.module('loopbackApp', [
   'lbServices',
   'formly',
   'toasty',
+  'hc.marked',
   'angularFileUpload'
 ])
 
@@ -42,7 +43,20 @@ angular.module('loopbackApp', [
 
 })
 
+.config(['markedProvider', function(markedProvider) {
+
+  markedProvider.setOptions({
+    gfm: true,
+    tables: true,
+    highlight: function(code) {
+    //  return hljs.highlightAuto(code).value
+    }
+  });
+
+}])
+
 .config(function($stateProvider, $urlRouterProvider) {
+
 
   $stateProvider.state('login', {
     url: '/login',

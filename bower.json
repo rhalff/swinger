@@ -16,6 +16,14 @@
     "angular-toasty": "git@github.com:beeman/angular-toasty.git",
     "angular-file-upload": "v0.4.0"
   },
+  "overrides": {
+    "angular-formly": {
+      "main": [
+        "dist/formly.bootstrap.min.js",
+        "dist/formly.bootstrap.map.js"
+       ]
+    }
+  },
   "devDependencies": {
     "angular-mocks": "1.2.21",
     "angular-scenario": "1.2.21"
