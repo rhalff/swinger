@@ -17,6 +17,9 @@ app.use(loopback.compress());
 
 // -- Add your pre-processing middleware here --
 
+// Set app root dir (expects boot to be present there)
+config.appRootDir = __dirname;
+
 // boot scripts mount components like REST API
 boot(app, config);
 
