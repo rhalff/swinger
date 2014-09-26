@@ -6,7 +6,6 @@ var file = [ './config',
     ].join('.');
 
 var config   = require('confert')(file);
-console.log(config);
 var app = module.exports = loopback();
 
 // Set up the /favicon.ico
