@@ -7,8 +7,8 @@
  */
 module.exports = {
   restApiRoot: '/api',
-  host: process.env.OPENSHIFT_IP,
-  port: process.env.OPENSHIFT_PORT,
+  host: process.env.OPENSHIFT_NODEJS_IP,
+  port: process.env.OPENSHIFT_NODEJS_PORT,
   url: 'http://' + process.env.OPENSHIFT_APP_DNS,
   dataSources: {
     contentDB: {
