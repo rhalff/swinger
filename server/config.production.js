@@ -10,6 +10,14 @@ module.exports = {
   host: process.env.OPENSHIFT_IP,
   port: process.env.OPENSHIFT_PORT,
   url: 'http://' + process.env.OPENSHIFT_APP_DNS,
+  dataSources: {
+    contentDB: {
+      name: 'contentDB',
+      connector: 'mongodb',
+      url: process.env.OPENSHIFT_MONGODB_DB_URL,
+      debug: false
+    }
+  },
   config: {
     storage: {
       provider: 'amazon',

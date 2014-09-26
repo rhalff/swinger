@@ -13,8 +13,8 @@
   "validations": [],
   "relations": {
     "category": {
-      "model": "Category",
-      "type": "belongsTo"
+      "type": "belongsTo",
+      "model": "Category"
     }
   },
   "acls": [],

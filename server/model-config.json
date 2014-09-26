@@ -6,47 +6,47 @@
     ]
   },
   "User": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": true
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": false
   },
   "item": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": true
   },
   "Note": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": true
   },
   "Post": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": true
   },
   "Setting": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": true
   },
   "Product": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": true
   },
   "Category": {
-    "dataSource": "db",
+    "dataSource": "contentDB",
     "public": true
   }
 }

@@ -2,7 +2,8 @@
 
 module.exports = function(app) {
 
-  if (app.dataSources.db.name !== 'Memory') {
+  // is a development check.
+  if (false && process.env.NODE_ENV !== 'development') {
     return;
   }
 
