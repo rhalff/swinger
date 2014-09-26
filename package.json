@@ -24,7 +24,6 @@
     "compression": "^1.0.11",
     "debug": "^1.0.4",
     "errorhandler": "^1.1.1",
-    "grunt": "^0.4.5",
     "lodash.clonedeep": "^2.4.1",
     "loopback": "^2.1.2",
     "loopback-boot": "^2.0.0",
