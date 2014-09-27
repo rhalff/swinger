@@ -5,6 +5,7 @@ dist
 client/app/scripts/lb-services.js
 storage
 npm-debug.log
+node_modules
 /nbproject/private/
 /nbproject
 amazon.sh

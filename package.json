@@ -32,7 +32,7 @@
     "serve-favicon": "^2.0.1",
     "toposort": "^0.2.10",
     "underscore": "^1.6.0",
-    "confert": "^0.3.0",
+    "confert": "0.3.1",
     "loopback-connector-mongodb": "^1.4.4"
   },
   "optionalDependencies": {
