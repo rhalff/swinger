@@ -1,0 +1,19 @@
+<div class="form-group">
+
+  Custom field of type "text"
+  <label for="{{id}}">
+  {{options.label || 'Text'}}
+  {{options.required ? '*' : ''}}
+  </label>
+
+  <tags-input
+   id="{{id}}"
+   ng-model="field[options.key || $index]"
+   ng-required="{{options.required}}"
+   placeholder="{{options.placeholder}}"
+   min-tags="{{options.minTags}}"
+   max-tags="{{options.maxTags}}">
+   <!-- auto-complete source="loadTags($query)"></auto-complete -->
+  </tags-input>
+
+</div>

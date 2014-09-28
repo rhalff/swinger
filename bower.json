@@ -15,14 +15,20 @@
     "angular-formly": "~0.0.14",
     "angular-toasty": "git@github.com:beeman/angular-toasty.git",
     "angular-file-upload": "v0.4.0",
-    "marked": "~0.3.2",
-    "angular-marked": "Hypercubed/angular-marked#~0.0.12"
+    "angular-marked": "git@github.com:Hypercubed/angular-marked.git",
+    "highlightjs": "~8.0.0",
+    "ng-tags-input": "~2.1.1"
   },
   "overrides": {
     "angular-formly": {
       "main": [
         "dist/formly.bootstrap.min.js",
         "dist/formly.bootstrap.map.js"
+      ]
+    },
+    "marked": {
+      "main": [
+        "lib/marked.js"
       ]
     }
   },

@@ -1,0 +1,24 @@
+{
+  "name": "Tag",
+  "plural": "tags",
+  "base": "PersistedModel",
+  "properties": {
+    "id": {
+      "type": "id"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "dateCreated": {
+      "type": "date"
+    },
+    "dateModified": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

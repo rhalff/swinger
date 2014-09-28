@@ -38,7 +38,7 @@ angular.module('loopbackApp')
     });
   })
 
-  .controller('PostsCtrl', function($scope, $state, $stateParams, toasty, Post) {
+  .controller('PostsCtrl', function($scope, $state, $stateParams, toasty, Post, Tag) {
 
   var postId = $stateParams.id;
 
@@ -52,9 +52,23 @@ angular.module('loopbackApp')
     $scope.post = {};
   }
 
+  // Make sure tags are send like this with text:
+  /*
+  $scope.tags = [
+     { text: 'just' },
+     { text: 'some' },
+     { text: 'cool' },
+     { text: 'tags' }
+    ];
+  */
+
   function loadItems() {
     $scope.posts = Post.find();
   }
+
+  $scope.loadTags = function(/*query*/) {
+    return Tag.find();
+  };
 
   loadItems();
 
@@ -82,7 +96,19 @@ angular.module('loopbackApp')
     key: 'title',
     type: 'text',
     label: 'Title',
+    placeholder: 'Enter a title for your post',
     required: true
+  }, {
+    key: 'content',
+    type: 'textarea',
+    lines: 14,
+    label: 'Content',
+    placeholder: 'Write some content!',
+    required: true
+  }, {
+    key: 'handle',
+    type: 'text',
+    label: 'Handle'
   }, {
     key: 'author',
     type: 'text',
@@ -90,17 +116,15 @@ angular.module('loopbackApp')
   }, {
     key: 'description',
     type: 'textarea',
+    lines: 4,
     label: 'Description',
     required: true
   }, {
     key: 'tags',
-    type: 'tags',
+    template:  'test<tags-input ng-model="post.tags"><auto-complete source="loadTags($query)"></auto-complete></tags-input>',
+    //type: 'views/elements/tags.html',
+    type: 'tagsInput',
     label: 'Tags'
-  }, {
-    key: 'content',
-    type: 'textarea',
-    label: 'Content',
-    required: true
   }, {
     key: 'image',
     type: 'text',
@@ -114,6 +138,10 @@ angular.module('loopbackApp')
   };
 
   $scope.onSubmit = function() {
+
+    // server should do creation and updated etc.
+    $scope.post.contentType = 'text/x-markdown';
+
     Post.upsert($scope.post, function() {
       toasty.pop.success({title: 'Post saved', msg: 'Your post is safe with us!', sound: false});
       $state.go('^.list');

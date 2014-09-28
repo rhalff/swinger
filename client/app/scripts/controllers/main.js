@@ -39,6 +39,10 @@ angular.module('loopbackApp')
       sref: 'app.notes.list',
       icon: 'fa-file-o'
     } , {
+      name: 'Tags',
+      sref: 'app.tags.list',
+      icon: 'fa-tags'
+    } , {
       name: 'Categories',
       sref: 'app.categories.list',
       icon: 'fa-folder'

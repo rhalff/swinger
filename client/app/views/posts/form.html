@@ -1,15 +1,17 @@
-<h4>
-  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+<h2 class="page-header">
+  <a ui-sref="^.list">Posts</a>
+  /
 
-  <span ng-show="!post.id">Add a new post</span>
-  <span ng-show="post.id">Edit post</span>
-
-</h4>
-
+  <!-- ok this is wrong and why it's first shown this should be different -->
+  <small ng-show="!post.id">Add a new post</small>
+  <small ng-show="post.id">{{post.title}}</small>
+  <a ng-click="onSubmit()" class="btn btn-default pull-right">Save</a>
+</h2>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-12">
     <div class="alert alert-danger" ng-if="addError">Could not add post!</div>
-    <formly-form result="post" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
+    <formly-form result="post" fields="formFields" options="formOptions" ng-submit="onSubmit()">
+    </formly-form>
   </div>
 </div>

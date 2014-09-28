@@ -37,6 +37,10 @@
     "dataSource": "contentDB",
     "public": true
   },
+  "Tag": {
+    "dataSource": "contentDB",
+    "public": true
+  },
   "Setting": {
     "dataSource": "contentDB",
     "public": true

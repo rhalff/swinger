@@ -1,5 +1,7 @@
 'use strict';
 
+/* global hljs */
+
 /**
  * @ngdoc overview
  * @name loopbackApp
@@ -20,6 +22,7 @@ angular.module('loopbackApp', [
   'formly',
   'toasty',
   'hc.marked',
+  'ngTagsInput',
   'angularFileUpload'
 ])
 
@@ -49,7 +52,7 @@ angular.module('loopbackApp', [
     gfm: true,
     tables: true,
     highlight: function(code) {
-    //  return hljs.highlightAuto(code).value
+      return hljs.highlightAuto(code).value;
     }
   });
 
