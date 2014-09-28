@@ -24,7 +24,7 @@
       "type": "string"
     },
     "tags": {
-      "type": "array"
+      "type": ["string"]
     },
     "image": {
       "type": "string"
