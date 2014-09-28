@@ -8,8 +8,7 @@
       "required": true
     },
     "author": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "handle": {
       "type": "string"
@@ -18,14 +17,16 @@
       "type": "string"
     },
     "content": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "contentType": {
       "type": "string"
     },
-    "tags": {
-      "type": ["string"]
-    },
+    "tags": [{
+      "type": "string",
+      "pattern": "^[A-z0-9-]+$"
+    }],
     "image": {
       "type": "string"
     },
