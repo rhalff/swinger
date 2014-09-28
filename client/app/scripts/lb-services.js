@@ -1,6 +1,6 @@
 (function(window, angular, undefined) {'use strict';
 
-var urlBase = "http://0.0.0.0:3000/api";
+var urlBase = "/api";
 
 /**
  * @ngdoc overview
@@ -71,9 +71,9 @@ module.factory(
          *
          * The response body contains properties of the AccessToken created on login.
          * Depending on the value of `include` parameter, the body may contain additional properties:
-         * 
+         *
          *   - `user` - `{User}` - Data of the currently logged in user. (`include=user`)
-         * 
+         *
          *
          */
         "login": {
@@ -145,11 +145,11 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `uid` – `{string}` - 
+         *  - `uid` – `{string}` -
          *
-         *  - `token` – `{string}` - 
+         *  - `token` – `{string}` -
          *
-         *  - `redirect` – `{string}` - 
+         *  - `redirect` – `{string}` -
          *
          * @param {Function(Object, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -265,7 +265,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `` – `{undefined=}` - 
+         *  - `` – `{undefined=}` -
          */
         "prototype$__destroyById__accessTokens": {
           url: urlBase + "/Users/:id/accessTokens/:fk",
@@ -324,7 +324,7 @@ module.factory(
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `filter` – `{object=}` - 
+         *  - `filter` – `{object=}` -
          *
          * @param {Function(Array.<Object>, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -441,7 +441,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "prototype$__count__accessTokens": {
           url: urlBase + "/Users/:id/accessTokens/count",
@@ -549,7 +549,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/Users/:id/exists",
@@ -745,7 +745,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/Users/count",
@@ -953,7 +953,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/items/:id/exists",
@@ -1149,7 +1149,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/items/count",
@@ -1324,7 +1324,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/notes/:id/exists",
@@ -1520,7 +1520,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/notes/count",
@@ -1695,7 +1695,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/posts/:id/exists",
@@ -1891,7 +1891,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/posts/count",
@@ -2066,7 +2066,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/settings/:id/exists",
@@ -2262,7 +2262,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/settings/count",
@@ -2350,7 +2350,7 @@ module.factory(
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `refresh` – `{boolean=}` - 
+         *  - `refresh` – `{boolean=}` -
          *
          * @param {Function(Object, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2473,7 +2473,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/products/:id/exists",
@@ -2669,7 +2669,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/products/count",
@@ -2773,7 +2773,7 @@ module.factory(
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `refresh` – `{boolean=}` - 
+         *  - `refresh` – `{boolean=}` -
          *
          * @param {Function(Object, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2887,7 +2887,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `` – `{undefined=}` - 
+         *  - `` – `{undefined=}` -
          */
         "prototype$__destroyById__products": {
           url: urlBase + "/categories/:id/products/:fk",
@@ -2948,7 +2948,7 @@ module.factory(
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `filter` – `{object=}` - 
+         *  - `filter` – `{object=}` -
          *
          * @param {Function(Array.<Object>, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3068,7 +3068,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "prototype$__count__products": {
           url: urlBase + "/categories/:id/products/count",
@@ -3176,7 +3176,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/categories/:id/exists",
@@ -3372,7 +3372,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/categories/count",
@@ -3439,7 +3439,7 @@ module.factory(
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `filter` – `{object=}` - 
+         *  - `filter` – `{object=}` -
          *
          * @param {Function(Array.<Object>, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3490,7 +3490,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         R.products.count = function() {
           var TargetResource = $injector.get("Product");
@@ -3597,7 +3597,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `` – `{undefined=}` - 
+         *  - `` – `{undefined=}` -
          */
         R.products.destroyById = function() {
           var TargetResource = $injector.get("Product");
@@ -3800,7 +3800,7 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `container` – `{string=}` - 
+         *  - `container` – `{string=}` -
          *
          * @param {Function(Object, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3814,7 +3814,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `` – `{undefined=}` - 
+         *  - `` – `{undefined=}` -
          */
         "destroyContainer": {
           url: urlBase + "/containers/:container",
@@ -3834,7 +3834,7 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `container` – `{string=}` - 
+         *  - `container` – `{string=}` -
          *
          * @param {Function(Object, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3869,7 +3869,7 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `container` – `{string=}` - 
+         *  - `container` – `{string=}` -
          *
          * @param {Function(Array.<Object>, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3905,9 +3905,9 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `container` – `{string=}` - 
+         *  - `container` – `{string=}` -
          *
-         *  - `file` – `{string=}` - 
+         *  - `file` – `{string=}` -
          *
          * @param {Function(Object, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3942,9 +3942,9 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `container` – `{string=}` - 
+         *  - `container` – `{string=}` -
          *
-         *  - `file` – `{string=}` - 
+         *  - `file` – `{string=}` -
          *
          * @param {Function(Object, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3958,7 +3958,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `` – `{undefined=}` - 
+         *  - `` – `{undefined=}` -
          */
         "removeFile": {
           url: urlBase + "/containers/:container/files/:file",
@@ -3983,9 +3983,9 @@ module.factory(
          *
          * @param {Object} postData Request data.
          *
-         *  - `req` – `{object=}` - 
+         *  - `req` – `{object=}` -
          *
-         *  - `res` – `{object=}` - 
+         *  - `res` – `{object=}` -
          *
          * @param {Function(Object, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3999,7 +3999,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `result` – `{object=}` - 
+         *  - `result` – `{object=}` -
          */
         "upload": {
           url: urlBase + "/containers/:container/upload",
@@ -4019,11 +4019,11 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `container` – `{string=}` - 
+         *  - `container` – `{string=}` -
          *
-         *  - `file` – `{string=}` - 
+         *  - `file` – `{string=}` -
          *
-         *  - `res` – `{object=}` - 
+         *  - `res` – `{object=}` -
          *
          * @param {Function(Object, Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
