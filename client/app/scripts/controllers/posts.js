@@ -141,7 +141,6 @@ angular.module('loopbackApp')
 
     // server should do creation and updated etc.
     $scope.post.contentType = 'text/x-markdown';
-
     Post.upsert($scope.post, function() {
       toasty.pop.success({title: 'Post saved', msg: 'Your post is safe with us!', sound: false});
       $state.go('^.list');
