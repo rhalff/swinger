@@ -73,15 +73,11 @@ angular.module('loopbackApp')
 
   };
 
+  // this really should be generated, look at crud of angular-app
   $scope.formFields = [{
-    key: 'title',
+    key: 'name',
     type: 'text',
-    label: 'Title',
-    required: true
-  }, {
-    key: 'body',
-    type: 'text',
-    label: 'Body',
+    label: 'Name',
     required: true
   }];
 

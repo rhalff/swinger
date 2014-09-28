@@ -13,5 +13,6 @@
     <div class="alert alert-danger" ng-if="addError">Could not add post!</div>
     <formly-form result="post" fields="formFields" options="formOptions" ng-submit="onSubmit()">
     </formly-form>
+    <pre>{{post | json}}</pre>
   </div>
 </div>

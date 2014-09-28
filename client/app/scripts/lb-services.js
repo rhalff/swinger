@@ -1,6 +1,6 @@
 (function(window, angular, undefined) {'use strict';
 
-var urlBase = "http://swinger-chix.rhcloud.com/api";
+var urlBase = "https://swinger-chix.rhcloud.com/api";
 
 /**
  * @ngdoc overview

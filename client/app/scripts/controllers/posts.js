@@ -121,8 +121,7 @@ angular.module('loopbackApp')
     required: true
   }, {
     key: 'tags',
-    template:  'test<tags-input ng-model="post.tags"><auto-complete source="loadTags($query)"></auto-complete></tags-input>',
-    //type: 'views/elements/tags.html',
+    template:  '<tags-input display-property="name" ng-model="post.tags"><auto-complete source="loadTags($query)"></auto-complete></tags-input>',
     type: 'tagsInput',
     label: 'Tags'
   }, {
