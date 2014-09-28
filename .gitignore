@@ -1,8 +1,6 @@
-dist
 .tmp
 *.swp
 .sass-cache
-client/app/scripts/lb-services.js
 storage
 npm-debug.log
 node_modules
