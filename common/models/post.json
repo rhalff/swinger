@@ -23,10 +23,11 @@
     "contentType": {
       "type": "string"
     },
-    "tags": [{
-      "type": "string",
-      "pattern": "^[A-z0-9-]+$"
-    }],
+    "tags": {
+      "type": [
+        "object"
+      ]
+    },
     "image": {
       "type": "string"
     },

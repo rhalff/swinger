@@ -123,11 +123,7 @@ angular.module('loopbackApp')
     required: true
   }, {
     key: 'tags',
-    // ok this does work. post.tags is filled, but unfortunately the wrong
-    // scope.
     templateUrl: 'views/elements/tags.html',
-    //template: '<tags-input display-property="name" ng-model="result[options.key]"><auto-complete source="loadTags($query)"></auto-complete></tags-input>',
-    //type: 'tagsInput',
     label: 'Tags'
   }, {
     key: 'image',
