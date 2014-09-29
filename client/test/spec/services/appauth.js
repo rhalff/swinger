@@ -3,7 +3,7 @@
 describe('Service: AppAuth', function () {
 
   // load the service's module
-  beforeEach(module('loopbackApp'));
+  beforeEach(module('swingerApp'));
 
   // instantiate service
   var AppAuth;

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name loopbackApp.controller:SandboxCtrl
+ * @name swingerApp.controller:SandboxCtrl
  * @description
  * # SandboxCtrl
- * Controller of the loopbackApp
+ * Controller of the swingerApp
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .config(function($stateProvider) {
     $stateProvider.state('app.sandbox', {
       abstract: true,

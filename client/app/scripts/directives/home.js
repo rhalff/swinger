@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:home
+ * @name swingerApp.directive:home
  * @description
  * # home
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .directive('home', function () {
     return {
       template: '<div></div>',

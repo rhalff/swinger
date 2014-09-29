@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:register
+ * @name swingerApp.directive:register
  * @description
  * # register
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .directive('register', function () {
     return {
       templateUrl: 'views/elements/register.html',

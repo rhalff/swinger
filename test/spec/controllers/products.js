@@ -3,7 +3,7 @@
 describe('Controller: ProductsCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('loopbackApp'));
+  beforeEach(module('swingerApp'));
 
   var ProductsCtrl,
     scope;

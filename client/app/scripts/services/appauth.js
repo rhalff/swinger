@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name loopbackApp.AppAuth
+ * @name swingerApp.AppAuth
  * @description
  * # AppAuth
- * Factory in the loopbackApp.
+ * Factory in the swingerApp.
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .factory('AppAuth', function () {
     return {
       currentUser: null,

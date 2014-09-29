@@ -3,7 +3,7 @@
 describe('Directive: login', function () {
 
   // load the directive's module
-  beforeEach(module('loopbackApp'));
+  beforeEach(module('swingerApp'));
 
   var element,
     scope;

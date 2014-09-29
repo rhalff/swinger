@@ -4,13 +4,13 @@
 
 /**
  * @ngdoc overview
- * @name loopbackApp
+ * @name swingerApp
  * @description
- * # loopbackApp
+ * # swingerApp
  *
  * Main module of the application.
  */
-angular.module('loopbackApp', [
+angular.module('swingerApp', [
   'ngAnimate',
   'ngCookies',
   'ngResource',

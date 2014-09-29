@@ -7,7 +7,7 @@
  * # FilesCtrl
  * Controller of the clientApp
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
 
 .config(function($stateProvider) {
   $stateProvider.state('app.files', {

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name loopbackApp.controller:LoginCtrl
+ * @name swingerApp.controller:LoginCtrl
  * @description
  * # LoginCtrl
- * Controller of the loopbackApp
+ * Controller of the swingerApp
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .controller('LoginCtrl', function ($scope, $routeParams, $location, toasty, User, AppAuth) {
     $scope.credentials = {
       email: 'admin@admin.com',

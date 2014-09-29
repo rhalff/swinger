@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:login
+ * @name swingerApp.directive:login
  * @description
  * # login
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .directive('login', function () {
     return {
       templateUrl: 'views/elements/login.html',

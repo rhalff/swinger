@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name loopbackApp.controller:UsersCtrl
+ * @name swingerApp.controller:UsersCtrl
  * @description
  * # UsersCtrl
- * Controller of the loopbackApp
+ * Controller of the swingerApp
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .config(function($stateProvider) {
     $stateProvider.state('app.users', {
       abstract: true,

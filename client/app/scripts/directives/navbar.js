@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:navbar
+ * @name swingerApp.directive:navbar
  * @description
  * # navbar
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .directive('navbar', function () {
     return {
       templateUrl: 'views/elements/navbar.html',

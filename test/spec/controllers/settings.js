@@ -3,7 +3,7 @@
 describe('Controller: SettingsCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('loopbackApp'));
+  beforeEach(module('swingerApp'));
 
   var SettingsCtrl,
     scope;

@@ -3,7 +3,7 @@
 describe('Controller: RegisterCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('loopbackApp'));
+  beforeEach(module('swingerApp'));
 
   var RegisterCtrl,
     scope;

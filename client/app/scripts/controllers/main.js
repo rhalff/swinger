@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name loopbackApp.controller:AppCtrl
+ * @name swingerApp.controller:AppCtrl
  * @description
  * # MainCtrl
- * Controller of the loopbackApp
+ * Controller of the swingerApp
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .config(function($stateProvider) {
     $stateProvider
     .state('app', {

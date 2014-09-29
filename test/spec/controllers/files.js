@@ -3,7 +3,7 @@
 describe('Controller: FilesCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('loopbackApp'));
+  beforeEach(module('swingerApp'));
 
   var FilesCtrl,
     scope;

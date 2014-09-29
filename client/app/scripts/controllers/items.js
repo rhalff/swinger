@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name loopbackApp.controller:ItemsCtrl
+ * @name swingerApp.controller:ItemsCtrl
  * @description
  * # ItemsCtrl
- * Controller of the loopbackApp
+ * Controller of the swingerApp
  */
-angular.module('loopbackApp')
+angular.module('swingerApp')
   .config(function($stateProvider) {
     $stateProvider.state('app.items', {
       abstract: true,
