@@ -38,6 +38,18 @@ post.sum(1, function(err, total) {
 });
 */
 
+var now = Date.now();
+
+console.log(post.modelName);
+
+//post.modelName = 'bogus';
+post.changes(now, function() {
+
+
+});
+
+post.modelName = 'post';
+
 // call a built in remote method
 post.find(function(err, items) {
   if(err) {

@@ -23,6 +23,7 @@ angular.module('swingerApp', [
   'toasty',
   'hc.marked',
   'ngTagsInput',
+  'schemaForm',
   'angularFileUpload'
 ])
 
