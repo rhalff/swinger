@@ -35,6 +35,10 @@ angular.module('swingerApp')
       sref: 'app.items.list',
       icon: 'fa-file-o'
     } , {
+      name: 'Models',
+      sref: 'app.models.list',
+      icon: 'fa-edit'
+    } , {
       name: 'Notes',
       sref: 'app.notes.list',
       icon: 'fa-file-o'

@@ -29,6 +29,10 @@
     "dataSource": "contentDB",
     "public": true
   },
+  "Model": {
+    "dataSource": "contentDB",
+    "public": true
+  },
   "Note": {
     "dataSource": "contentDB",
     "public": true
