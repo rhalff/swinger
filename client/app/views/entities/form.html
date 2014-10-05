@@ -1,0 +1,18 @@
+<h2 class="page-header">
+  <i class="fa fa-pencil"></i>
+  <a ui-sref="^.list">Entities</a>
+  /
+  <!-- ok this is wrong and why it's first shown this should be different -->
+  <small ng-show="!post.id">Add a new entity</small>
+  <small ng-show="post.id">{{entity.title}}</small>
+  <a ng-click="onSubmit()" class="btn btn-default pull-right">Save</a>
+</h2>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="alert alert-danger" ng-if="addError">Could not add entity!</div>
+    <formly-form result="post" fields="formFields" options="formOptions" ng-submit="onSubmit()">
+    </formly-form>
+    <pre>{{entity | json}}</pre>
+  </div>
+</div>

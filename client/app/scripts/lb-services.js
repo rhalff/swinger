@@ -1,6 +1,6 @@
 (function(window, angular, undefined) {'use strict';
 
-var urlBase = "https://swinger-chix.rhcloud.com/api";
+var urlBase = "/api";
 
 /**
  * @ngdoc overview
@@ -1932,6 +1932,377 @@ module.factory(
          */
         "prototype$updateAttributes": {
           url: urlBase + "/notes/:id",
+          method: "PUT",
+        },
+      }
+    );
+
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Entity
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Entity` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "Entity",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/entities/:id",
+      { 'id': '@id' },
+      {
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#create
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {Function(Object, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Entity` object.)
+         * </em>
+         */
+        "create": {
+          url: urlBase + "/entities",
+          method: "POST",
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#upsert
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {Function(Object, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Entity` object.)
+         * </em>
+         */
+        "upsert": {
+          url: urlBase + "/entities",
+          method: "PUT",
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#exists
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {Function(Object, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `exists` – `{boolean=}` - 
+         */
+        "exists": {
+          url: urlBase + "/entities/:id/exists",
+          method: "GET",
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#findById
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {Function(Object, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Entity` object.)
+         * </em>
+         */
+        "findById": {
+          url: urlBase + "/entities/:id",
+          method: "GET",
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#find
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, orderBy, offset, and limit
+         *
+         * @param {Function(Array.<Object>, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Entity` object.)
+         * </em>
+         */
+        "find": {
+          url: urlBase + "/entities",
+          method: "GET",
+          isArray: true,
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#findOne
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, orderBy, offset, and limit
+         *
+         * @param {Function(Object, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Entity` object.)
+         * </em>
+         */
+        "findOne": {
+          url: urlBase + "/entities/findOne",
+          method: "GET",
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#updateAll
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {Function(Object, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "updateAll": {
+          url: urlBase + "/entities/update",
+          method: "POST",
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#deleteById
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {Function(Object, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "deleteById": {
+          url: urlBase + "/entities/:id",
+          method: "DELETE",
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#count
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Function(Object, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "count": {
+          url: urlBase + "/entities/count",
+          method: "GET",
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Entity#prototype$updateAttributes
+         * @methodOf lbServices.Entity
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {Function(Object, Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {Function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @return {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Entity` object.)
+         * </em>
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/entities/:id",
           method: "PUT",
         },
       }

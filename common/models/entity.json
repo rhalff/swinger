@@ -1,0 +1,48 @@
+{
+  "name": "Entity",
+  "plural": "entities",
+  "base": "PersistedModel",
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string"
+    },
+    "handle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "contentType": {
+      "type": "string"
+    },
+    "tags": {
+      "type": [
+        "object"
+      ]
+    },
+    "image": {
+      "type": "string"
+    },
+    "dateCreated": {
+      "type": "date"
+    },
+    "dateModified": {
+      "type": "date"
+    },
+    "datePublished": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

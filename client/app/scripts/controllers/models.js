@@ -37,12 +37,13 @@ angular.module('swingerApp')
     });
   })
 
-.controller('ModelsCtrl', function($scope, $state, $stateParams, toasty, model) {
+.controller('ModelsCtrl', function($scope, $state, $stateParams, toasty, Model) {
 
   var modelId = $stateParams.id;
 
+
   if (modelId) {
-    $scope.model = model.findById({
+    $scope.model = Model.findById({
       id: modelId
     }, function() {}, function(err) {
       console.log(err);
@@ -52,7 +53,7 @@ angular.module('swingerApp')
   }
 
   function loadmodels() {
-    $scope.models = model.find();
+    $scope.models = Model.find();
   }
 
   loadmodels();
@@ -61,7 +62,7 @@ angular.module('swingerApp')
     // if (confirm('Are you sure?') === false) {
       // return false;
     // }
-    model.deleteById(id, function() {
+    Model.deleteById(id, function() {
       toasty.pop.success({title: 'model deleted', msg: 'Your model is deleted!', sound: false});
       loadmodels();
       $state.go('app.models.list');
@@ -95,7 +96,7 @@ angular.module('swingerApp')
 
   $scope.onSubmit = function() {
 
-    model.upsert($scope.model, function() {
+    Model.upsert($scope.model, function() {
       toasty.pop.success({title: 'model saved', msg: 'Your model is safe with us!', sound: false});
       $state.go('^.list');
     }, function(err) {
