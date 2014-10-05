@@ -37,10 +37,6 @@
     "dataSource": "contentDB",
     "public": true
   },
-  "Entity": {
-    "dataSource": "contentDB",
-    "public": true
-  },
   "Post": {
     "dataSource": "contentDB",
     "public": true
