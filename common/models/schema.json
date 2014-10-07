@@ -1,6 +1,6 @@
 {
-  "name": "Model",
-  "plural": "models",
+  "name": "Schema",
+  "plural": "schemas",
   "base": "PersistedModel",
   "properties": {
     "id": {
