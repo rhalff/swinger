@@ -1,19 +1,19 @@
 <h4>
   <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
 
-  <span ng-show="!item.id">Add a new model</span>
-  <span ng-show="item.id">Edit model</span>
+  <span ng-show="!item.id">Add a new schema</span>
+  <span ng-show="item.id">Edit schema</span>
 
 </h4>
 
 
 <div class="row">
   <div class="col-md-12">
-    <div class="alert alert-danger" ng-if="addError">Could not add model!</div>
+    <div class="alert alert-danger" ng-if="addError">Could not add schema!</div>
     <form name="schemaForm"
           sf-schema="schema"
           sf-form="form"
-          sf-model="model"
+          sf-model="schemaModel"
           ng-submit="onSubmit(schemaForm)"></form>
   </div>
 </div>

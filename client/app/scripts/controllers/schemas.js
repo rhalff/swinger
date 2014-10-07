@@ -2,70 +2,69 @@
 
 /**
  * @ngdoc function
- * @name swingerApp.controller:ModelCtrl
+ * @name swingerApp.controller:SchemaCtrl
  * @description
- * # ModelCtrl
+ * # SchemaCtrl
  * Controller of the swingerApp
  */
 angular.module('swingerApp')
   .config(function($stateProvider) {
-    $stateProvider.state('app.models', {
+    $stateProvider.state('app.schemas', {
       abstract: true,
-      url: '/models',
-      templateUrl: 'views/models/main.html',
-      controller: 'ModelsCtrl'
+      url: '/schemas',
+      templateUrl: 'views/schemas/main.html',
+      controller: 'SchemasCtrl'
     })
-    .state('app.models.list', {
+    .state('app.schemas.list', {
       url: '',
-      templateUrl: 'views/models/list.html',
-      controller: 'ModelsCtrl'
+      templateUrl: 'views/schemas/list.html',
+      controller: 'SchemasCtrl'
     })
-    .state('app.models.add', {
+    .state('app.schemas.add', {
       url: '/add',
-      templateUrl: 'views/models/form.html',
-      controller: 'ModelsCtrl'
+      templateUrl: 'views/schemas/form.html',
+      controller: 'SchemasCtrl'
     })
-    .state('app.models.edit', {
+    .state('app.schemas.edit', {
       url: '/:id/edit',
-      templateUrl: 'views/models/form.html',
-      controller: 'ModelsCtrl'
+      templateUrl: 'views/schemas/form.html',
+      controller: 'SchemasCtrl'
     })
-    .state('app.models.view', {
+    .state('app.schemas.view', {
       url: '/:id',
-      templateUrl: 'views/models/view.html',
-      controller: 'ModelsCtrl'
+      templateUrl: 'views/schemas/view.html',
+      controller: 'SchemasCtrl'
     });
   })
 
-.controller('ModelsCtrl', function($scope, $state, $stateParams, toasty, Model) {
+.controller('SchemasCtrl', function($scope, $state, $stateParams, toasty, Schema) {
 
-  var modelId = $stateParams.id;
+  var id = $stateParams.id;
 
-
-  if (modelId) {
-    $scope.model = Model.findById({
-      id: modelId
+  if (id) {
+    $scope.schemaModel = Schema.findById({
+      id: id
     }, function() {}, function(err) {
       console.log(err);
     });
   } else {
-    $scope.model = {};
+    $scope.schemaModel = {};
   }
 
-  function loadmodels() {
-    $scope.models = Model.find();
+  function loadSchemas() {
+    $scope.schemas = Schema.find();
   }
 
-  loadmodels();
+  loadSchemas();
 
   $scope.delete = function(id) {
     // if (confirm('Are you sure?') === false) {
       // return false;
     // }
-    Model.deleteById(id, function() {
+    Schema.deleteById(id, function() {
       toasty.pop.success({title: 'model deleted', msg: 'Your model is deleted!', sound: false});
-      loadmodels();
-      $state.go('app.models.list');
+      loadSchemas();
+      $state.go('app.schemas.list');
       console.log();
     }, function(err) {
       toasty.pop.error({title: 'Error deleting model', msg: 'Your model is not deleted: ' + err, sound: false});
@@ -214,7 +213,7 @@ angular.module('swingerApp')
   }
   ];
 
-  $scope.model = {};
+  $scope.schemaModel = {};
 
   $scope.onSubmit = function(form) {
 
@@ -222,7 +221,7 @@ angular.module('swingerApp')
 
     if(form.$valid) {
 
-      Model.upsert($scope.model, function() {
+      Model.upsert($scope.schemaModel, function() {
         toasty.pop.success({title: 'model saved', msg: 'Your model is safe with us!', sound: false});
         $state.go('^.list');
       }, function(err) {
