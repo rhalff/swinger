@@ -29,7 +29,7 @@
     "dataSource": "contentDB",
     "public": true
   },
-  "Model": {
+  "Schema": {
     "dataSource": "contentDB",
     "public": true
   },
