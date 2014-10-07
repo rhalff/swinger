@@ -1201,12 +1201,12 @@ module.factory(
 
 /**
  * @ngdoc object
- * @name lbServices.Model
+ * @name lbServices.Schema
  * @object
  *
  * @description
  *
- * A $resource object for interacting with the `Model` model.
+ * A $resource object for interacting with the `Schema` model.
  *
  * ## Example
  *
@@ -1216,17 +1216,17 @@ module.factory(
  *
  */
 module.factory(
-  "Model",
+  "Schema",
   ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
     var R = Resource(
-      urlBase + "/models/:id",
+      urlBase + "/schemas/:id",
       { 'id': '@id' },
       {
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#create
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#create
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1253,18 +1253,18 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Model` object.)
+         * This usually means the response is a `Schema` object.)
          * </em>
          */
         "create": {
-          url: urlBase + "/models",
+          url: urlBase + "/schemas",
           method: "POST",
         },
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#upsert
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#upsert
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1291,18 +1291,18 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Model` object.)
+         * This usually means the response is a `Schema` object.)
          * </em>
          */
         "upsert": {
-          url: urlBase + "/models",
+          url: urlBase + "/schemas",
           method: "PUT",
         },
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#exists
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#exists
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1327,14 +1327,14 @@ module.factory(
          *  - `exists` – `{boolean=}` - 
          */
         "exists": {
-          url: urlBase + "/models/:id/exists",
+          url: urlBase + "/schemas/:id/exists",
           method: "GET",
         },
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#findById
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#findById
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1356,18 +1356,18 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Model` object.)
+         * This usually means the response is a `Schema` object.)
          * </em>
          */
         "findById": {
-          url: urlBase + "/models/:id",
+          url: urlBase + "/schemas/:id",
           method: "GET",
         },
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#find
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#find
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1389,19 +1389,19 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Model` object.)
+         * This usually means the response is a `Schema` object.)
          * </em>
          */
         "find": {
-          url: urlBase + "/models",
+          url: urlBase + "/schemas",
           method: "GET",
           isArray: true,
         },
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#findOne
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#findOne
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1423,18 +1423,18 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Model` object.)
+         * This usually means the response is a `Schema` object.)
          * </em>
          */
         "findOne": {
-          url: urlBase + "/models/findOne",
+          url: urlBase + "/schemas/findOne",
           method: "GET",
         },
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#updateAll
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#updateAll
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1461,14 +1461,14 @@ module.factory(
          * This method returns no data.
          */
         "updateAll": {
-          url: urlBase + "/models/update",
+          url: urlBase + "/schemas/update",
           method: "POST",
         },
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#deleteById
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#deleteById
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1491,14 +1491,14 @@ module.factory(
          * This method returns no data.
          */
         "deleteById": {
-          url: urlBase + "/models/:id",
+          url: urlBase + "/schemas/:id",
           method: "DELETE",
         },
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#count
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#count
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1523,14 +1523,14 @@ module.factory(
          *  - `count` – `{number=}` - 
          */
         "count": {
-          url: urlBase + "/models/count",
+          url: urlBase + "/schemas/count",
           method: "GET",
         },
 
         /**
          * @ngdoc method
-         * @name lbServices.Model#prototype$updateAttributes
-         * @methodOf lbServices.Model
+         * @name lbServices.Schema#prototype$updateAttributes
+         * @methodOf lbServices.Schema
          *
          * @description
          *
@@ -1556,11 +1556,11 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Model` object.)
+         * This usually means the response is a `Schema` object.)
          * </em>
          */
         "prototype$updateAttributes": {
-          url: urlBase + "/models/:id",
+          url: urlBase + "/schemas/:id",
           method: "PUT",
         },
       }
