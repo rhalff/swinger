@@ -8,12 +8,16 @@
 
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8">
     <div class="alert alert-danger" ng-if="addError">Could not add schema!</div>
     <form name="schemaForm"
           sf-schema="schema"
           sf-form="form"
           sf-model="schemaModel"
           ng-submit="onSubmit(schemaForm)"></form>
+  </div>
+  <div class="col-md-4">
+    <pre>{{schemaModel | json}}</pre>
+    <pre>{{schema | json}}</pre>
   </div>
 </div>
