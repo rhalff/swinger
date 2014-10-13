@@ -23,12 +23,12 @@ angular.module('swingerApp')
     .state('app.schemas.add', {
       url: '/add',
       templateUrl: 'views/schemas/form.html',
-      controller: 'SchemasCtrl'
+      controller: 'SchemaCtrl'
     })
     .state('app.schemas.edit', {
       url: '/:id/edit',
       templateUrl: 'views/schemas/form.html',
-      controller: 'SchemasCtrl'
+      controller: 'SchemaCtrl'
     })
     .state('app.schemas.view', {
       url: '/:id',
@@ -38,18 +38,6 @@ angular.module('swingerApp')
   })
 
 .controller('SchemasCtrl', function($scope, $state, $stateParams, toasty, Schema) {
-
-  var id = $stateParams.id;
-
-  if (id) {
-    $scope.schemaModel = Schema.findById({
-      id: id
-    }, function() {}, function(err) {
-      console.log(err);
-    });
-  } else {
-    $scope.schemaModel = {};
-  }
 
   function loadSchemas() {
     $scope.schemas = Schema.find();
@@ -72,21 +60,13 @@ angular.module('swingerApp')
 
   };
 
- // Load the schema, this schema should come from the database.
- // We are creating a schema with this form
- // thus, we start with an array, then a common form to add
- // simple types.
- // type options should be tabbed.
- // e.g enum indicates something.
- // pattern
- // minLength, maxLength
- // ok recap. Schema, Form, Loopback model, swagger
- // hoe bewaar ik en van wat laad ik. het resultaat is een nieuw loopback model
- // bedoeling is dus, wat nu plat als json staat vanuit de database te halen.
- // loopback model is vrij beperkt, laat ik het eerst zo maken
- // dat ik een loopback model can saven. een object is eigenlijk altijd een nieuwe
- // model. welke gerelateerd wordt.
-  $scope.schema = {
+})
+
+.controller('SchemaCtrl', function($scope, $state, $stateParams, toasty, Schema) {
+
+  var id = $stateParams.id;
+
+  var schema = {
     'type': 'object',
     'title': 'Model',
     required: [
@@ -110,8 +90,6 @@ angular.module('swingerApp')
       },
       'properties': {
         'type': 'array',
-        'maxItems': 20,
-        'minItems': 1,
         'items': {
           'type': 'object',
           'properties': {
@@ -127,7 +105,14 @@ angular.module('swingerApp')
             'type': {
               'title': 'Type',
               'type': 'string',
+              // these types could also be links to existing schema's
+              // this way you could in theory link deeply nested schema's
               'enum': ['string', 'integer', 'number', 'boolean', 'null', 'array', 'object']
+            },
+            'format': {
+              'title': 'Format',
+              'type': 'string',
+              'enum': ['date', 'datetime', 'email', 'search', 'tel', 'time', 'url']
             },
             'minLength': {
               'title': 'Minimum length',
@@ -152,14 +137,14 @@ angular.module('swingerApp')
     }
   };
 
-  $scope.form = [
+  var form = [
   {
     type: 'fieldset',
     key: 'info',
     items: [
       {
         'type': 'help',
-          'helpvalue': '<p>Try adding a couple of forms, reorder by dragndrop.</p>'
+          'helpvalue': '<p>Manage your schema\'s.</p>'
       }, {
         'key': 'name',
         onChange: function(modelValue, form) {
@@ -213,7 +198,41 @@ angular.module('swingerApp')
   }
   ];
 
+
   $scope.schemaModel = {};
+  if (id) {
+
+    Schema.findById({ id: id })
+    .$promise
+    .then(function(schema) {
+       // somehow tabs will not update, no clue why
+       $scope.schemaModel = schema;
+    });
+
+  } else {
+    $scope.schemaModel = {};
+    $scope.schema = schema;
+    $scope.form   = form;
+
+  }
+
+  $scope.schema = schema;
+  $scope.form   = form;
+
+  $scope.delete = function(id) {
+    // if (confirm('Are you sure?') === false) {
+      // return false;
+    // }
+    Schema.deleteById(id, function() {
+      toasty.pop.success({title: 'model deleted', msg: 'Your model is deleted!', sound: false});
+      loadSchemas();
+      $state.go('app.schemas.list');
+      console.log();
+    }, function(err) {
+      toasty.pop.error({title: 'Error deleting model', msg: 'Your model is not deleted: ' + err, sound: false});
+    });
+
+  };
 
   $scope.onSubmit = function(form) {
 
@@ -221,7 +240,7 @@ angular.module('swingerApp')
 
     if(form.$valid) {
 
-      Model.upsert($scope.schemaModel, function() {
+      Schema.upsert($scope.schemaModel, function() {
         toasty.pop.success({title: 'model saved', msg: 'Your model is safe with us!', sound: false});
         $state.go('^.list');
       }, function(err) {
