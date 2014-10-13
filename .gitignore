@@ -4,6 +4,7 @@
 storage
 npm-debug.log
 node_modules
+client/app/bower_components/
 /nbproject/private/
 /nbproject
 amazon.sh
