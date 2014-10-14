@@ -204,9 +204,11 @@ angular.module('swingerApp')
 
     Schema.findById({ id: id })
     .$promise
-    .then(function(schema) {
+    .then(function(model) {
        // somehow tabs will not update, no clue why
-       $scope.schemaModel = schema;
+       $scope.schemaModel = model;
+       $scope.schema = schema;
+       $scope.form   = form;
     });
 
   } else {
@@ -216,8 +218,6 @@ angular.module('swingerApp')
 
   }
 
-  $scope.schema = schema;
-  $scope.form   = form;
 
   $scope.delete = function(id) {
     // if (confirm('Are you sure?') === false) {
